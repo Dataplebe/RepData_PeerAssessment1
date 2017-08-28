@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1503903832712.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "92D10DD2",
+    "lastKnownWriteTime" : 7308604914264011873,
+    "last_content_update" : 1503903832712,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "7F914D2D",
+        "caption" : "xplot",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=xplot&cache_key=7F914D2D",
+        "displayedObservations" : 288,
+        "environment" : "",
+        "object" : "xplot",
+        "preview" : 0,
+        "totalObservations" : 288,
+        "variables" : 2
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

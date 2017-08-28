@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"PA1_template.Rmd\"\nauthor: \"Matt\"\ndate: \"August 27, 2017\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n<h1>Loading and preprocessing the data</h1>\n```{r echo = TRUE}\nstepsdf <- read.csv(\"activity.csv\", stringsAsFactors = F)\nstepsdf$date <- as.POSIXct(stepsdf$date, format=\"%Y-%m-%d\")\n```\n\n<h2>Histogram of the total number of steps taken each day</h2>\n```{r echo = TRUE}\nhist(tapply(stepsdf$steps, stepsdf$date, sum, na.rm=T),\n  main = \"Histogram of Total Steps taken each Day\",\n  xlab = \"Steps\",\n  col = \"blue\",\n  border = \"white\",\n  xlim = c(0, 25000),\n  breaks = 10,\n  axes = FALSE)\naxis(2)\naxis(1, at=seq(0, 22000, by=2000))\n```\n\n<h2>Calculate and report the mean and median of the total number of steps taken per day</h2>\n```{r echo = TRUE}\nlibrary(dplyr)\nstepsdf %>% group_by(date) %>% summarise(mean = mean(steps, na.rm=TRUE), median = median(steps, na.rm=TRUE))\n```",
+    "created" : 1503819271968.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3781461339",
+    "id" : "53526712",
+    "lastKnownWriteTime" : 1503869349,
+    "last_content_update" : 1503869349179,
+    "path" : "~/GitHub/RepData_PeerAssessment1/PA2_template.Rmd",
+    "project_path" : "PA2_template.Rmd",
+    "properties" : {
+        "last_setup_crc32" : "17A05132bb338d19",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

@@ -1,0 +1,36 @@
+---
+title: "PA1_template.Rmd"
+author: "Matt"
+date: "August 27, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<h1>Loading and preprocessing the data</h1>
+```{r echo = TRUE}
+stepsdf <- read.csv("activity.csv", stringsAsFactors = F)
+stepsdf$date <- as.POSIXct(stepsdf$date, format="%Y-%m-%d")
+```
+
+<h2>Histogram of the total number of steps taken each day</h2>
+```{r echo = TRUE}
+hist(tapply(stepsdf$steps, stepsdf$date, sum, na.rm=T),
+  main = "Histogram of Total Steps taken each Day",
+  xlab = "Steps",
+  col = "blue",
+  border = "white",
+  xlim = c(0, 25000),
+  breaks = 10,
+  axes = FALSE)
+axis(2)
+axis(1, at=seq(0, 22000, by=2000))
+```
+
+<h2>Calculate and report the mean and median of the total number of steps taken per day</h2>
+```{r echo = TRUE}
+library(dplyr)
+stepsdf %>% group_by(date) %>% summarise(mean = mean(steps, na.rm=TRUE), median = median(steps, na.rm=TRUE))
+```
